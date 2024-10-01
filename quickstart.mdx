@@ -9,10 +9,10 @@ The quickest way to get started with `AnyParser` is using the SDK.
 If you'd rather call the RESTful API directly, please refer to the [API Reference](/api-reference/)
 ## Setup
 
-First install [any-parser-rt](https://pypi.org/project/any-parser-rt/) from `pypi`.
+First install [any-parser](https://pypi.org/project/any-parser/) from `pypi`.
 
 ```python
-pip install any-parser-rt
+pip install any-parser
 ```
 
 Next get your API key from the [CambioML website](https://www.cambioml.com/account).
@@ -24,21 +24,21 @@ Next get your API key from the [CambioML website](https://www.cambioml.com/accou
 Finally, set up your `AnyParser` sync or async client.
 
 ```python anyparser_sync.py
-from any_parser_rt.any_parser_rt import AnyParserRT
+from any_parser import AnyParser
 
-ap_rt = AnyParserRT(api_key="...")
+ap = AnyParser(api_key="...")
 
-md_output, total_time = ap_rt.extract(file_path="./data/test.pdf")
+markdown_output, total_time = ap.extract(file_path="./data/test.pdf")
 ```
 
 ```python anyparser_async.py
-from any_parser_rt.any_parser_rt import AnyParserRT
+from any_parser import AnyParser
 
-ap_rt = AnyParserRT(api_key="...")
+ap = AnyParser(api_key="...")
 
-file_id = ap_rt.async_extract(file_path="./data/test.pdf")
+file_id = ap.async_extract(file_path="./data/test.pdf")
 
-md = ap_rt.async_fetch(file_id=file_id)
+markdown_output = ap.async_fetch(file_id=file_id)
 ```
 
 ## Full Examples
@@ -49,14 +49,14 @@ Check out these notebooks for more detailed examples of using AnyParser.
   <Card
     title="AnyParser Sync Example"
     icon="bolt-lightning"
-    href="https://github.com/CambioML/any-parser-rt/blob/main/example/example.ipynb"
+    href="https://github.com/CambioML/any-parser/blob/rt-migration/examples/sync_example.ipynb"
   >
     Extracting content from a Meta Earnings presentation.
   </Card>
   <Card
     title="AnyParser Async Example"
     icon="rotate"
-    href="https://github.com/CambioML/any-parser-rt/blob/main/example/async_example.ipynb"
+    href="https://github.com/CambioML/any-parser/blob/rt-migration/examples/async_example.ipynb"
   >
     Extracting content from a Meta Earnings presentation.
   </Card>
